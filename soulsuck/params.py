@@ -8,5 +8,12 @@ def loadGameParams(dataDir: str) -> GameParamBND:
     return GameParamBND(Path(gameParamBNDPath))
 
 def loadParamRows(dataDir: str, name: str) -> dict:
-    param: Param = getattr(loadGameParams(dataDir), name)
+    params = loadGameParams(dataDir)
+    members = dir(params)
+    if name not in members:
+        print(f"Unknown param name: {name}")
+        print(f"Found members: {members}")
+        exit(1)
+
+    param: Param = getattr(params, name)
     return param.to_dict()["rows"]
