@@ -4,7 +4,6 @@ from soulstruct.darksouls1ptde.maps.map_studio_directory import MapStudioDirecto
 from soulstruct.darksouls1ptde.maps.msb import MSB
 
 GAME_AREA_NAMES = [
-    "Common",
     "Depths",
     "UndeadBurg",
     "FirelinkShrine",
